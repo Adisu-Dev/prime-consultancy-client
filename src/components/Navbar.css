@@ -175,10 +175,16 @@
   .nav-right  { display: none; }
   .hamburger  { display: flex; }
   .mobile-menu { display: flex; }
+  .navbar-inner { height: 64px; }
+  .nav-logo { margin-right: 0; }
 }
 
-/* 480px — compact logo text */
+/* 480px — compact logo */
 @media (max-width: 480px) {
-  .nav-logo-sub { display: none; }
-  .nav-logo-name { font-size: 14px; letter-spacing: 1px; }
+  .navbar-inner { height: 60px; padding: 0 4px; }
+  .nav-logo-sub  { display: none; }
+  .nav-logo-name { font-size: 15px; letter-spacing: 1px; }
+  .nav-logo-mark { width: 34px; height: 34px; font-size: 17px; }
+  .nav-logo { gap: 8px; }
+  .hamburger { width: 36px; height: 36px; }
 }
