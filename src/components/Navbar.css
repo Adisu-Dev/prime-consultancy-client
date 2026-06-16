@@ -164,9 +164,15 @@
 
 /* ─ Responsive breakpoints ─ */
 
-/* 1024px — hide phone number */
+/* 1024px — hide phone number AND Home link on tablet/mobile */
 @media (max-width: 1024px) {
-  .nav-phone { display: none; }
+  .nav-phone    { display: none; }
+  .nav-item-home { display: none; }  /* hide Home li on tablet */
+}
+
+/* Mobile menu — hide Home link (logo already links to home) */
+@media (max-width: 860px) {
+  .mobile-link-home { display: none; }
 }
 
 /* 860px — tablet/mobile: show hamburger, hide desktop nav */

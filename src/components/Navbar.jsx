@@ -40,7 +40,7 @@ export default function Navbar() {
         {/* Desktop links */}
         <ul className="nav-links">
           {links.map(l => (
-            <li key={l.label}>
+            <li key={l.label} className={l.label === 'Home' ? 'nav-item-home' : ''}>
               <a href={l.href} className="nav-link">{l.label}</a>
             </li>
           ))}
@@ -71,7 +71,12 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div className={`mobile-menu${menuOpen ? ' open' : ''}`} aria-hidden={!menuOpen}>
         {links.map(l => (
-          <a key={l.label} href={l.href} className="mobile-link" onClick={close}>
+          <a
+            key={l.label}
+            href={l.href}
+            className={`mobile-link${l.label === 'Home' ? ' mobile-link-home' : ''}`}
+            onClick={close}
+          >
             {l.label}
           </a>
         ))}
