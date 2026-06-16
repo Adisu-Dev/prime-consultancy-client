@@ -4,6 +4,11 @@ main { display: block; }
 /* Default: sections clear the 80px fixed navbar */
 section[id] { scroll-margin-top: 80px; }
 
+/* Tablet: sections clear the 64px navbar */
+@media (max-width: 860px) {
+  section[id] { scroll-margin-top: 64px; }
+}
+
 /* Mobile: sections clear the 60px navbar */
 @media (max-width: 480px) {
   section[id] { scroll-margin-top: 60px; }
