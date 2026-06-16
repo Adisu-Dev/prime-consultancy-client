@@ -194,45 +194,47 @@
 
 /* ─ Responsive ─ */
 
-/* Tablet: 768px–1100px */
+/* Tablet ≤1100px */
 @media (max-width: 1100px) {
   .hero-content { gap: 40px; }
 }
 
-/* Mobile: ≤860px — stack vertically */
+/* Mobile/Tablet ≤860px — navbar is 64px */
 @media (max-width: 860px) {
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 40px;
-    padding-top: 100px;  /* navbar 64px + 36px breathing room */
+    gap: 32px;
+    padding-top: 104px;   /* 64px navbar + 40px gap */
+    padding-bottom: 40px;
   }
-  .hero-sub    { margin: 0 auto 36px; }
+  .hero-sub    { margin: 0 auto 32px; }
   .hero-btns   { justify-content: center; }
   .hero-trust  { justify-content: center; }
   .hero-right  { width: 100%; max-width: 500px; margin: 0 auto; }
   .hero-float  { display: none; }
 }
 
-/* Small mobile: ≤540px */
+/* Small mobile ≤540px — navbar is 60px */
 @media (max-width: 540px) {
   .hero-content {
-    padding-top: 110px; /* navbar 60px + 50px breathing room */
-    padding-bottom: 40px;
+    padding-top: 96px;    /* 60px navbar + 36px gap */
+    padding-bottom: 32px;
   }
-  .hero-img    { height: 240px; }
-  .hero-title  { font-size: clamp(28px, 8vw, 40px); }
-  .hero-sub    { font-size: 16px; }
+  .hero-img    { height: 220px; }
+  .hero-title  { font-size: clamp(26px, 7vw, 38px); }
+  .hero-sub    { font-size: 15px; }
   .hero-btns   { flex-direction: column; align-items: center; }
-  .hero-btns .btn { width: 100%; max-width: 280px; justify-content: center; }
+  .hero-btns .btn { width: 100%; max-width: 300px; justify-content: center; }
   .stats-row   { flex-wrap: wrap; }
   .stat-wrap   { flex: 0 0 calc(50% - 8px); min-width: unset; }
   .stat-sep    { display: none; }
-  .hero-stats  { padding: 24px 0; }
+  .hero-stats  { padding: 20px 0; }
 }
 
-/* Very small phones: ≤400px */
-@media (max-width: 400px) {
-  .hero-content { padding-top: 120px; }
-  .hero-eyebrow { font-size: 11px; padding: 5px 12px; }
+/* Very small ≤360px (Samsung Galaxy S8+) */
+@media (max-width: 360px) {
+  .hero-content  { padding-top: 92px; }
+  .hero-eyebrow  { font-size: 10px; padding: 5px 10px; letter-spacing: 1.5px; }
+  .hero-title    { font-size: clamp(24px, 7vw, 34px); }
 }

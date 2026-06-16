@@ -1,9 +1,4 @@
-/* ═══════════ NAVBAR — Figma spec ═══════════
-   Height: 80px | Max-width: 1280px | Background: White
-   Scrolled: shadow-md
-   Nav links: 15px Medium, #374151, hover #1B3A6B
-   Mobile hamburger below 860px
-═══════════════════════════════════════════ */
+/* ═══════════ NAVBAR ═══════════ */
 
 .navbar {
   position: fixed;
@@ -18,15 +13,16 @@
   border-color: var(--border);
 }
 
-/* ─ Inner layout ─ */
+/* ── Inner ── */
 .navbar-inner {
   display: flex;
   align-items: center;
-  height: 80px;
+  height: 72px;        /* single consistent height used everywhere */
+  padding: 0 32px;
   gap: 0;
 }
 
-/* ─ Logo ─ */
+/* ── Logo ── */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -47,7 +43,7 @@
 .nav-logo-name { font-size: 16px; font-weight: 800; color: var(--primary-d); letter-spacing: 1.5px; }
 .nav-logo-sub  { font-size: 8px; color: var(--gray-mid); letter-spacing: 1.5px; margin-top: 2px; text-transform: uppercase; }
 
-/* ─ Desktop nav links (centered) ─ */
+/* ── Desktop nav links ── */
 .nav-links {
   display: flex;
   align-items: center;
@@ -67,7 +63,7 @@
 }
 .nav-link:hover { color: var(--primary); background: rgba(27,58,107,0.05); }
 
-/* ─ Desktop right area ─ */
+/* ── Desktop right ── */
 .nav-right {
   display: flex;
   align-items: center;
@@ -87,7 +83,7 @@
 }
 .nav-phone:hover { color: var(--primary); }
 
-/* ─ Hamburger (hidden on desktop) ─ */
+/* ── Hamburger — hidden on desktop ── */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -109,20 +105,19 @@
   border-radius: 2px;
   transition: all 0.3s ease;
 }
-/* Animate to X */
 .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
-/* ─ Mobile Menu ─ */
+/* ── Mobile Menu ── */
 .mobile-menu {
   display: none;
   flex-direction: column;
-  padding: 0 20px 24px;
   background: #fff;
   border-top: 1px solid var(--border);
   overflow: hidden;
   max-height: 0;
+  padding: 0;
   transition: max-height 0.35s ease, padding 0.35s ease;
 }
 .mobile-menu.open {
@@ -139,11 +134,11 @@
   border-bottom: 1px solid var(--border);
   transition: color 0.2s, padding-left 0.2s;
 }
-.mobile-link:hover {
-  color: var(--primary);
-  padding-left: 8px;
-}
+.mobile-link:hover { color: var(--primary); padding-left: 8px; }
 .mobile-link:last-of-type { border-bottom: none; }
+
+/* Hide "Home" in mobile menu — logo already scrolls to top */
+.mobile-link-home { display: none !important; }
 
 .mobile-cta {
   display: flex !important;
@@ -152,7 +147,6 @@
   margin-top: 16px;
   text-decoration: none;
 }
-
 .mobile-phone {
   display: block;
   margin-top: 10px;
@@ -162,35 +156,32 @@
   padding: 6px 0;
 }
 
-/* ─ Responsive breakpoints ─ */
+/* ══════════════════════════════
+   RESPONSIVE BREAKPOINTS
+══════════════════════════════ */
 
-/* 1024px — hide phone number AND Home link on tablet/mobile */
+/* Tablet ≤1024px — hide phone + Home desktop link */
 @media (max-width: 1024px) {
-  .nav-phone    { display: none; }
-  .nav-item-home { display: none; }  /* hide Home li on tablet */
+  .nav-phone     { display: none; }
+  .nav-item-home { display: none; }
 }
 
-/* Mobile menu — hide Home link (logo already links to home) */
+/* Mobile/Tablet ≤860px — hamburger mode */
 @media (max-width: 860px) {
-  .mobile-link-home { display: none; }
+  .navbar-inner { height: 64px; padding: 0 20px; }
+  .nav-links    { display: none; }
+  .nav-right    { display: none; }
+  .hamburger    { display: flex; }
+  .mobile-menu  { display: flex; }
+  .nav-logo     { margin-right: 0; }
 }
 
-/* 860px — tablet/mobile: show hamburger, hide desktop nav */
-@media (max-width: 860px) {
-  .nav-links  { display: none; }
-  .nav-right  { display: none; }
-  .hamburger  { display: flex; }
-  .mobile-menu { display: flex; }
-  .navbar-inner { height: 64px; }
-  .nav-logo { margin-right: 0; }
-}
-
-/* 480px — compact logo */
+/* Small mobile ≤480px */
 @media (max-width: 480px) {
-  .navbar-inner { height: 60px; padding: 0 4px; }
+  .navbar-inner  { height: 60px; padding: 0 16px; }
   .nav-logo-sub  { display: none; }
-  .nav-logo-name { font-size: 15px; letter-spacing: 1px; }
-  .nav-logo-mark { width: 34px; height: 34px; font-size: 17px; }
-  .nav-logo { gap: 8px; }
-  .hamburger { width: 36px; height: 36px; }
+  .nav-logo-name { font-size: 14px; letter-spacing: 1px; }
+  .nav-logo-mark { width: 34px; height: 34px; font-size: 16px; }
+  .nav-logo      { gap: 8px; }
+  .hamburger     { width: 36px; height: 36px; }
 }

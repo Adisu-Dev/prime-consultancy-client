@@ -1,15 +1,15 @@
 html { scroll-behavior: smooth; }
 main { display: block; }
 
-/* Default: sections clear the 80px fixed navbar */
-section[id] { scroll-margin-top: 80px; }
+/* Desktop: sections clear the 72px navbar */
+section[id] { scroll-margin-top: 72px; }
 
-/* Tablet: sections clear the 64px navbar */
+/* Tablet/Mobile ≤860px: navbar is 64px */
 @media (max-width: 860px) {
   section[id] { scroll-margin-top: 64px; }
 }
 
-/* Mobile: sections clear the 60px navbar */
+/* Small mobile ≤480px: navbar is 60px */
 @media (max-width: 480px) {
   section[id] { scroll-margin-top: 60px; }
 }
