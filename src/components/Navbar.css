@@ -119,6 +119,8 @@
   max-height: 0;
   padding: 0;
   transition: max-height 0.35s ease, padding 0.35s ease;
+  /* Overlay — does not push page content */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 .mobile-menu.open {
   max-height: 560px;
@@ -138,7 +140,7 @@
 .mobile-link:last-of-type { border-bottom: none; }
 
 /* Hide "Home" in mobile menu — logo already scrolls to top */
-.mobile-link-home { display: none !important; }
+/* .mobile-link-home { display: none !important; } */
 
 .mobile-cta {
   display: flex !important;
